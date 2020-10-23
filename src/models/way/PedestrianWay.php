@@ -4,16 +4,16 @@ require_once "../src/models/vehicles/Vehicle.php";
 
 final class PedestrianWay extends HighWay
 {
-    public function __construct(int $nbLane, int $maxSpeed)
+    public function __construct(int $nbLane = 1, int $maxSpeed = 10)
     {
         parent::__construct($nbLane, $maxSpeed);
         $this->currentVehicles = [];
     }
 
-    public function addVehicle(array $vehicles): void
+    public function addVehicle($vehicle)
     {
-        if($vehicles instanceof Bicycle) {
-            parent::setCurrentVehicles((array)$vehicles);
+        if($vehicle instanceof Bicycle || $vehicle instanceof Skateboard) {
+            $this->currentVehicle[] = $vehicle;
         }
     }
 }

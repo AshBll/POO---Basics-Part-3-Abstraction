@@ -66,5 +66,5 @@ abstract class HighWay
     }
 
     // Défini une méthode pour ajouter un véhicule pour toute les classes filles.
-    abstract function addVehicle(array $vehicles);
+    abstract function addVehicle($vehicle);
 }
